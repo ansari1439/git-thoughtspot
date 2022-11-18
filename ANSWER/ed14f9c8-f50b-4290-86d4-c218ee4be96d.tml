@@ -21,18 +21,21 @@ answer:
     table: LINEORDER
     join_path:
     - {}
-  search_query: "[LINEORDER_1::Quantity] [LINEORDER_1::Tax] [LINEORDER_1::Discount] [CUSTOMER_1::Market Segment] [CUSTOMER_1::Customer Region] [CUSTOMER_1::Market Segment] = [CUSTOMER_1::Market Segment].building [CUSTOMER_1::Market Segment].furniture [CUSTOMER_1::Market Segment].automobile"
+  search_query: "[LINEORDER_1::Quantity] [LINEORDER_1::Tax] [LINEORDER_1::Discount] [CUSTOMER_1::Market Segment] [CUSTOMER_1::Customer Region] [CUSTOMER_1::Market Segment] = [CUSTOMER_1::Market Segment].building [CUSTOMER_1::Market Segment].furniture [CUSTOMER_1::Market Segment].automobile [CUSTOMER_1::Customer Nation]"
   answer_columns:
   - name: Customer Region
   - name: Total Quantity
   - name: Market Segment
   - name: Total Tax
   - name: Total Discount
+  - name: Customer Nation
   table:
     table_columns:
     - column_id: Market Segment
       headline_aggregation: COUNT_DISTINCT
     - column_id: Customer Region
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Customer Nation
       headline_aggregation: COUNT_DISTINCT
     - column_id: Total Quantity
       headline_aggregation: SUM
@@ -43,6 +46,7 @@ answer:
     ordered_column_ids:
     - Market Segment
     - Customer Region
+    - Customer Nation
     - Total Quantity
     - Total Tax
     - Total Discount
@@ -53,6 +57,7 @@ answer:
     chart_columns:
     - column_id: Market Segment
     - column_id: Customer Region
+    - column_id: Customer Nation
     - column_id: Total Quantity
     - column_id: Total Tax
     - column_id: Total Discount
