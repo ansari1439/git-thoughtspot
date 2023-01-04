@@ -6,8 +6,8 @@ liveboard:
     answer:
       name: "Total Revenue, Total Quantity by Color"
       tables:
-      - id: Parameters WS_C
-        name: Parameters WS_C
+      - id: Parameters WS
+        name: Parameters WS
       formulas:
       - id: Holiday YTD
         name: Holiday YTD
