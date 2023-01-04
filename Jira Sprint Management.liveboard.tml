@@ -1,0 +1,487 @@
+guid: bdee892b-0600-44ba-9dbd-ef56500faabd
+liveboard:
+  name: Jira Sprint Management
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Count of Closed Sprints
+      description: Total Number of Closed Sprints
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint State] = 'closed'"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      table:
+        table_columns:
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Unique Number of Sprint ID\",\"columnProperty\": {}}]}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - "y":
+          - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"31801b93-54fe-4fb0-9bf7-30da5f5efd2a\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"isOpposite\": false}},{\"id\": \"3c381c56-f681-4f46-b190-bec4e92de54f\",\"properties\": {\"axisType\": \"X\"}}]}"
+      display_mode: CHART_MODE
+    viz_guid: af96ca26-f8de-4e16-b1b5-2fa6b29cff4c
+  - id: Viz_2
+    answer:
+      name: Count of Future Sprints
+      description: Total Number of Future Sprints
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint State] = 'future'"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      table:
+        table_columns:
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Unique Number of Sprint ID\",\"columnProperty\": {}}]}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - "y":
+          - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"28b654ac-e670-47c8-ac1e-2fe2709205f6\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"isOpposite\": false}},{\"id\": \"9df7fc38-6d61-4fae-80b1-02e62d471772\",\"properties\": {\"axisType\": \"X\"}}]}"
+      display_mode: CHART_MODE
+    viz_guid: 43b8f030-e400-47ed-afe4-704516df85bb
+  - id: Viz_3
+    answer:
+      name: Total Sprints by Sprint State
+      description: Total Count of Sprints by State
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint State]"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Sprint State
+      table:
+        table_columns:
+        - column_id: Sprint State
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Sprint State
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Sprint State
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - x:
+          - Sprint State
+          "y":
+          - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"Unique Number of Sprint ID\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"fe6e3622-52a5-4c59-9537-b4d71afa658a\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"isOpposite\": false}},{\"id\": \"80fe74ac-a4ae-4e88-a75c-bd7845955116\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Sprint State\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#8C62F5\"},{\"serieName\": \"active\",\"color\": \"#FCC838\"},{\"serieName\": \"closed\",\"color\": \"#48D1E0\"},{\"serieName\": \"future\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 7ed1d064-3cf0-4706-aa93-32f29a9b8f82
+  - id: Viz_4
+    answer:
+      name: Count of Sprints by State
+      description: Total Number of Sprints by State for Last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint Start Date] [Sprint Start Date].monthly [Sprint Start Date].'last 12 months' [Sprint Start Date].'this month' [Sprint State]"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Month(Sprint Start Date)
+      - name: Sprint State
+      table:
+        table_columns:
+        - column_id: Month(Sprint Start Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Sprint State
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Month(Sprint Start Date)
+        - Sprint State
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Month(Sprint Start Date)
+        - column_id: Sprint State
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - x:
+          - Month(Sprint Start Date)
+          "y":
+          - Unique Number of Sprint ID
+          color:
+          - Sprint State
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"},\"showStackedLabels\": true},\"columnProperties\": [{\"columnId\": \"Unique Number of Sprint ID\",\"columnProperty\": {\"dataLabels\": false}}],\"axisProperties\": [{\"id\": \"d30c8ea7-1323-4f4e-a565-4dd89594bc7f\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Start Date)\"],\"name\": \"Monthly (Sprint Start Date)\"}},{\"id\": \"707a86f5-140a-4a55-99b6-ffe9740aab68\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"name\": \"Unique Count Sprint ID\",\"isOpposite\": false}}],\"systemSeriesColors\": [{\"serieName\": \"active\",\"color\": \"#FCC838\"},{\"serieName\": \"closed\",\"color\": \"#48D1E0\"},{\"serieName\": \"future\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 6f4d8013-eb33-49cd-acd8-d82c26e50283
+  - id: Viz_5
+    answer:
+      name: Count of Closed Sprints
+      description: Total Number of Closed Sprints for Last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint Complete Date] [Sprint Complete Date].monthly [Sprint Complete Date].'last 12 months' [Sprint Complete Date].'this month' [Sprint State] = 'closed'"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Month(Sprint Complete Date)
+      table:
+        table_columns:
+        - column_id: Month(Sprint Complete Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Month(Sprint Complete Date)
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Sprint Complete Date)
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - x:
+          - Month(Sprint Complete Date)
+          "y":
+          - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"d1bb3030-1076-4ac4-91a4-bfba52c73e67\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Complete Date)\"],\"name\": \"Monthly (Sprint Complete Date)\"}},{\"id\": \"75f22c21-f8db-47ef-b73a-b1c4f8865498\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"name\": \"Unique Count Sprint ID\",\"isOpposite\": false}}],\"seriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#48D1E0\"}],\"systemSeriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#8C62F5\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: d74d908b-f617-4c9b-8909-1366c7533553
+  - id: Viz_6
+    answer:
+      name: Active Sprint Age Buckets
+      description: Sprint Age Buckets - All Active Sprints
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint Age Buckets] [Sprint State] = 'active' sort by [Sprint Age Buckets] descending"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Sprint Age Buckets
+      table:
+        table_columns:
+        - column_id: Sprint Age Buckets
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Sprint Age Buckets
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Sprint Age Buckets
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - x:
+          - Sprint Age Buckets
+          "y":
+          - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"Unique Number of Sprint ID\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"f5e00892-d59d-4f01-9234-7b5d59c57b1d\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Sprint Age Buckets\"]}},{\"id\": \"4b59578c-7593-413b-9550-d38b7ac6401f\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"name\": \"Unique Count Sprint ID\",\"isOpposite\": false}}],\"seriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#A2ACBA\"}],\"systemSeriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#FF8142\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 4ed39ad9-517d-46ac-a517-baf83bcd3226
+  - id: Viz_7
+    answer:
+      name: Average Active Sprint Age Days
+      description: Average Active Sprint Age Days for Last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] average [Sprint Active Age Days] [Sprint Start Date] [Sprint Start Date].monthly [Sprint Start Date].'last 12 months' [Sprint Start Date].'this month' [Sprint State] = 'active'"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Average Sprint Active Age Days
+      - name: Month(Sprint Start Date)
+      table:
+        table_columns:
+        - column_id: Month(Sprint Start Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        - column_id: Average Sprint Active Age Days
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Month(Sprint Start Date)
+        - Unique Number of Sprint ID
+        - Average Sprint Active Age Days
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Sprint Start Date)
+        - column_id: Unique Number of Sprint ID
+        - column_id: Average Sprint Active Age Days
+        axis_configs:
+        - x:
+          - Month(Sprint Start Date)
+          "y":
+          - Average Sprint Active Age Days
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"383f82cb-fda1-42fe-9d3a-9f7b24cbc074\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Average Sprint Active Age Days\"],\"isOpposite\": false}},{\"id\": \"99cbdf65-6995-46c4-963b-84a87231c0d5\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Start Date)\"],\"name\": \"Monthly (Sprint Start Date)\"}}],\"seriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#2E75F0\"},{\"serieName\": \"active\",\"color\": \"#2E75F0\"},{\"serieName\": \"closed\",\"color\": \"#48D1E0\"},{\"serieName\": \"future\",\"color\": \"#FCC838\"},{\"serieName\": \"Average Sprint Active Age Days\",\"color\": \"#FCC838\"}],\"systemSeriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#2E75F0\"},{\"serieName\": \"Average Sprint Active Age Days\",\"color\": \"#48D1E0\"},{\"serieName\": \"active\",\"color\": \"#2E75F0\"},{\"serieName\": \"closed\",\"color\": \"#48D1E0\"},{\"serieName\": \"future\",\"color\": \"#FCC838\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: a5f65135-702f-4292-b67e-c25f21ef32ec
+  - id: Viz_8
+    answer:
+      name: Average Closed Sprint Age Days
+      description: Average Closed Sprint Age Days for Last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] average [Sprint Close Age days] [Sprint Complete Date].monthly [Sprint Complete Date].'last 12 months' [Sprint Complete Date].'this month' [Sprint State] = 'closed'"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Average Sprint Close Age days
+      - name: Month(Sprint Complete Date)
+      table:
+        table_columns:
+        - column_id: Month(Sprint Complete Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        - column_id: Average Sprint Close Age days
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Month(Sprint Complete Date)
+        - Unique Number of Sprint ID
+        - Average Sprint Close Age days
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Sprint Complete Date)
+        - column_id: Unique Number of Sprint ID
+        - column_id: Average Sprint Close Age days
+        axis_configs:
+        - x:
+          - Month(Sprint Complete Date)
+          "y":
+          - Average Sprint Close Age days
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"ff1f405a-4051-45a8-95a0-1fbd92aad08b\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Average Sprint Close Age days\"],\"isOpposite\": false}},{\"id\": \"ad6a32e7-b7df-4339-8020-7137fbbd87bc\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Complete Date)\"],\"name\": \"Monthly (Sprint Complete Date)\"}}],\"seriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#2E75F0\"},{\"serieName\": \"392dea55-1339-429e-9c00-364b2c122056\",\"color\": \"#48D1E0\"},{\"serieName\": \"Average Sprint Close Age days\",\"color\": \"#48D1E0\"}],\"systemSeriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#2E75F0\"},{\"serieName\": \"392dea55-1339-429e-9c00-364b2c122056\",\"color\": \"#48D1E0\"},{\"serieName\": \"Average Sprint Close Age days\",\"color\": \"#FCC838\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 4d910a1a-b3f8-4b1b-bf62-1724303b1281
+  - id: Viz_9
+    answer:
+      name: Top 10 Average Active Sprint Age Days by Name
+      description: Top 10 Average Active Sprint Age Days by Sprint Name
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "[Sprint Name] average [Sprint Active Age Days] top 10 sort by average [Sprint Active Age Days] descending [Sprint State] = 'active'"
+      answer_columns:
+      - name: Sprint Name
+      - name: Average Sprint Active Age Days
+      table:
+        table_columns:
+        - column_id: Sprint Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Average Sprint Active Age Days
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Sprint Name
+        - Average Sprint Active Age Days
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Sprint Name
+        - column_id: Average Sprint Active Age Days
+        axis_configs:
+        - x:
+          - Sprint Name
+          "y":
+          - Average Sprint Active Age Days
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"807f6b50-2242-4f3b-9dde-fe8f791a7816\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Average Sprint Active Age Days\"],\"isOpposite\": false}},{\"id\": \"03854a0c-f278-452c-ab31-61b8b303fc0e\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Sprint Name\"]}}],\"seriesColors\": [{\"serieName\": \"Sprint Name\",\"color\": \"#2E75F0\"},{\"serieName\": \"Average Sprint Active Age Days\",\"color\": \"#F47E89\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: a00f0f05-e9dd-4928-9295-f80d1ba65012
+  - id: Viz_10
+    answer:
+      name: Average Closed Sprint Actual Days vs Estimate Days
+      description: Average Close Sprints Actual Days vs Average Close Sprints Estimate Days for last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "[Sprint Name] average [Sprint Close Age days] average [Sprint Estimate] [Sprint State] = 'closed' [Sprint Start Date] [Sprint Start Date].monthly [Sprint Start Date].'last 12 months' [Sprint Start Date].'this month' sort by average [Sprint Close Age days] descending"
+      answer_columns:
+      - name: Sprint Name
+      - name: Average Sprint Close Age days
+      - name: Average Sprint Estimate
+      - name: Month(Sprint Start Date)
+      table:
+        table_columns:
+        - column_id: Sprint Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Month(Sprint Start Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Average Sprint Close Age days
+          headline_aggregation: TABLE_AGGR
+        - column_id: Average Sprint Estimate
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Sprint Name
+        - Month(Sprint Start Date)
+        - Average Sprint Close Age days
+        - Average Sprint Estimate
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: AREA
+        chart_columns:
+        - column_id: Sprint Name
+        - column_id: Month(Sprint Start Date)
+        - column_id: Average Sprint Close Age days
+        - column_id: Average Sprint Estimate
+        axis_configs:
+        - x:
+          - Month(Sprint Start Date)
+          "y":
+          - Average Sprint Close Age days
+          - Average Sprint Estimate
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"c64d1dc8-8724-4725-aed3-f4d1a346c600\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Average Sprint Close Age days\",\"Average Sprint Estimate\"],\"isOpposite\": false}},{\"id\": \"f71384af-f85f-46e1-b0e4-5ffc675de864\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Start Date)\"],\"name\": \"Monthly (Sprint Start Date)\"}}],\"seriesColors\": [{\"serieName\": \"a698f3b3-293f-4ac8-a4ad-10ef3d09dcf6\",\"color\": \"#F47E89\"},{\"serieName\": \"Average Sprint Estimate\",\"color\": \"#BEC6D0\"},{\"serieName\": \"Average Sprint Close Age days\",\"color\": \"#47515F\"}],\"systemSeriesColors\": [{\"serieName\": \"a698f3b3-293f-4ac8-a4ad-10ef3d09dcf6\",\"color\": \"#F47E89\"},{\"serieName\": \"Average Sprint Estimate\",\"color\": \"#06BF7F\"},{\"serieName\": \"Average Sprint Close Age days\",\"color\": \"#48D1E0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 92e1c195-252f-4024-9bdb-1307a313a71f
+  - id: Viz_11
+    answer:
+      name: Count of Active Sprints
+      description: Total Number of Active Sprints for Last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "unique count [Sprint ID] [Sprint State] = 'active' [Sprint Start Date] [Sprint Start Date].monthly [Sprint Start Date].'last 12 months' [Sprint Start Date].'this month'"
+      answer_columns:
+      - name: Unique Number of Sprint ID
+      - name: Month(Sprint Start Date)
+      table:
+        table_columns:
+        - column_id: Month(Sprint Start Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Unique Number of Sprint ID
+          headline_aggregation: AVERAGE
+        ordered_column_ids:
+        - Month(Sprint Start Date)
+        - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Sprint Start Date)
+        - column_id: Unique Number of Sprint ID
+        axis_configs:
+        - x:
+          - Month(Sprint Start Date)
+          "y":
+          - Unique Number of Sprint ID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"3cd5136c-8672-4952-b814-d097d95760a6\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Start Date)\"],\"name\": \"Monthly (Sprint Start Date)\"}},{\"id\": \"90ccc233-ee2e-47f2-8c79-6169d3ffa535\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Sprint ID\"],\"name\": \"Unique Count Sprint ID\",\"isOpposite\": false}}],\"systemSeriesColors\": [{\"serieName\": \"Unique Number of Sprint ID\",\"color\": \"#FCC838\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: f8e22205-bcd3-474e-9c47-73d755eb4322
+  - id: Viz_12
+    answer:
+      name: Average Active Sprint Actual Days vs Estimate Days
+      description: Average Active Sprints Actual Days vs Average Active Sprints Estimate Days for last 12 Months
+      tables:
+      - id: Jira Sprint Management
+        name: Jira Sprint Management
+      search_query: "[Sprint Name] average [Sprint Active Age Days] average [Sprint Estimate] [Sprint State] = 'active' [Sprint Start Date] [Sprint Start Date].monthly [Sprint Start Date].'last 12 months' [Sprint Start Date].'this month' sort by average [Sprint Active Age Days] descending"
+      answer_columns:
+      - name: Sprint Name
+      - name: Average Sprint Active Age Days
+      - name: Average Sprint Estimate
+      - name: Month(Sprint Start Date)
+      table:
+        table_columns:
+        - column_id: Sprint Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Month(Sprint Start Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Average Sprint Active Age Days
+          headline_aggregation: TABLE_AGGR
+        - column_id: Average Sprint Estimate
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Sprint Name
+        - Month(Sprint Start Date)
+        - Average Sprint Active Age Days
+        - Average Sprint Estimate
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: AREA
+        chart_columns:
+        - column_id: Sprint Name
+        - column_id: Month(Sprint Start Date)
+        - column_id: Average Sprint Active Age Days
+        - column_id: Average Sprint Estimate
+        axis_configs:
+        - x:
+          - Month(Sprint Start Date)
+          "y":
+          - Average Sprint Active Age Days
+          - Average Sprint Estimate
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"axisProperties\": [{\"id\": \"9f2c78b4-099f-4b98-a742-100c3fd56701\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Average Sprint Active Age Days\",\"Average Sprint Estimate\"],\"isOpposite\": false}},{\"id\": \"b96f5127-430b-434e-8fa4-0470e22e87cc\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Sprint Start Date)\"],\"name\": \"Monthly (Sprint Start Date)\"}}],\"seriesColors\": [{\"serieName\": \"Average Sprint Active Age Days\",\"color\": \"#47515F\"},{\"serieName\": \"Average Sprint Estimate\",\"color\": \"#BEC6D0\"}],\"systemSeriesColors\": [{\"serieName\": \"Average Sprint Active Age Days\",\"color\": \"#48D1E0\"},{\"serieName\": \"Average Sprint Estimate\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 4bea226b-89ec-48f6-ad1f-b59285b7c1db
+  layout:
+    tiles:
+    - visualization_id: Viz_1
+      size: EXTRA_SMALL
+    - visualization_id: Viz_2
+      size: EXTRA_SMALL
+    - visualization_id: Viz_3
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_4
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_11
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_5
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_7
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_8
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_9
+      size: MEDIUM
+    - visualization_id: Viz_6
+      size: MEDIUM
+    - visualization_id: Viz_12
+      size: LARGE_SMALL
+    - visualization_id: Viz_10
+      size: LARGE_SMALL
