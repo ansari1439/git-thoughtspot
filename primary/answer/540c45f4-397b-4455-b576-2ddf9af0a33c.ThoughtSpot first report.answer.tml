@@ -1,0 +1,51 @@
+guid: 540c45f4-397b-4455-b576-2ddf9af0a33c
+answer:
+  name: ThoughtSpot first report
+  description: ThoughtSpot first report Table
+  tables:
+  - id: LINEORDER
+    name: LINEORDER
+  - id: PART
+    name: PART
+  joins:
+  - id: Lineorder PartKey - Part PartKey
+    name: Lineorder PartKey - Part PartKey
+    source: LINEORDER
+    destination: PART
+  table_paths:
+  - id: LINEORDER_1
+    table: LINEORDER
+    join_path:
+    - {}
+  - id: PART_1
+    table: PART
+    join_path:
+    - join:
+      - Lineorder PartKey - Part PartKey
+  search_query: "[LINEORDER_1::Revenue] by [PART_1::Brand1]"
+  answer_columns:
+  - name: Total Revenue
+  - name: Brand1
+  table:
+    table_columns:
+    - column_id: Brand1
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Total Revenue
+      headline_aggregation: SUM
+    ordered_column_ids:
+    - Brand1
+    - Total Revenue
+    client_state: "{\"wrapTableHeader\":true}"
+  chart:
+    type: COLUMN
+    chart_columns:
+    - column_id: Brand1
+    - column_id: Total Revenue
+    axis_configs:
+    - x:
+      - Brand1
+      "y":
+      - Total Revenue
+    client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"2f86a7f5-2fce-48ca-94c7-eb2b616774d1\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"6c092cd4-0530-462f-8d28-e3b1cd620dd6\":{\"linkedColumns\":[\"Brand1\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total Revenue\":\"#8C62F5\"},\"version\":\"V2.1\",\"columnProperties\":{\"Brand1\":{},\"Total Revenue\":{}}}"
+  display_mode: CHART_MODE
+  client_state: "{\"answerMode\":\"advanced\"}"
