@@ -86,9 +86,9 @@ liveboard:
   layout:
     tiles:
     - visualization_id: Viz_1
-      size: SMALL
+      size: EXTRA_SMALL
     - visualization_id: Viz_2
-      size: SMALL
+      size: LARGE
   parameter_overrides:
   - key: 75bb2345-1997-4b00-b364-5fea0ec0c406
     value:
