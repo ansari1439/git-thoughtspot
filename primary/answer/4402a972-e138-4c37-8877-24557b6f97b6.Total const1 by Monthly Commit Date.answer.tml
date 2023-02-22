@@ -1,0 +1,34 @@
+guid: 4402a972-e138-4c37-8877-24557b6f97b6
+answer:
+  name: Total const1 by Monthly Commit Date
+  tables:
+  - id: Formula Worksheet
+    name: Formula Worksheet
+  search_query: "[Commit Date] [Commit Date].monthly [const1]"
+  answer_columns:
+  - name: Month(Commit Date)
+  - name: Total const1
+  table:
+    table_columns:
+    - column_id: Month(Commit Date)
+      headline_aggregation: MIN-MAX
+    - column_id: Total const1
+      headline_aggregation: TABLE_AGGR
+    ordered_column_ids:
+    - Month(Commit Date)
+    - Total const1
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+  chart:
+    type: LINE
+    chart_columns:
+    - column_id: Month(Commit Date)
+    - column_id: Total const1
+    axis_configs:
+    - x:
+      - Month(Commit Date)
+      "y":
+      - Total const1
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"0030afee-c624-43d8-8d86-12d7ff1b1ede\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total const1\"],\"isOpposite\": false}},{\"id\": \"21c1f7da-1d37-47f0-ac80-c626eebfff65\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Commit Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total const1\",\"color\": \"#06BF7F\"}]}"
+  display_mode: CHART_MODE
