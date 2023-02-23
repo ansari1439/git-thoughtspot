@@ -1,6 +1,6 @@
 guid: 061457a2-27bc-43a9-9754-0cd873691bf0
 liveboard:
-  name: Revenue Trends
+  name: Revenue Trends 2
   visualizations:
   - id: Viz_1
     answer:
@@ -57,59 +57,6 @@ liveboard:
     viz_guid: 9985fccf-b28d-4262-b54b-29619a38348e
   - id: Viz_2
     answer:
-      name: Total Revenue by Commit Date by Ship Mode
-      description: |-
-        Filters:
-        Commit Date : >= 01/01/1996 < 01/01/1997
-        Ship Mode
-      tables:
-      - id: LINEORDER
-        name: LINEORDER
-      search_query: "[Revenue] [Discount] [Commit Date].quarterly [Ship Mode] [Commit Date].1996 [Ship Mode] != '{null}'"
-      answer_columns:
-      - name: Total Revenue
-      - name: Total Discount
-      - name: Quarter(Commit Date)
-      - name: Ship Mode
-      table:
-        table_columns:
-        - column_id: Quarter(Commit Date)
-          headline_aggregation: MIN-MAX
-        - column_id: Ship Mode
-          headline_aggregation: COUNT_DISTINCT
-        - column_id: Total Revenue
-          headline_aggregation: SUM
-        - column_id: Total Discount
-          headline_aggregation: SUM
-        ordered_column_ids:
-        - Quarter(Commit Date)
-        - Ship Mode
-        - Total Revenue
-        - Total Discount
-        client_state: "{\"dataOffset\":0.0,\"wrapTableHeader\":true}"
-      chart:
-        type: LINE_STACKED_COLUMN
-        chart_columns:
-        - column_id: Quarter(Commit Date)
-        - column_id: Ship Mode
-        - column_id: Total Revenue
-        - column_id: Total Discount
-        axis_configs:
-        - x:
-          - Quarter(Commit Date)
-          "y":
-          - Total Revenue
-          color:
-          - Ship Mode
-        - x:
-          - Quarter(Commit Date)
-          "y":
-          - Total Discount
-        client_state: "{\"dataLabels\":true,\"chartProperties\":{\"visibleSeriesNames\":[\"\",\"air\",\"fob\",\"mail\",\"rail\",\"reg air\",\"ship\",\"truck\",\"Total Discount\"],\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"5b31f620-e79c-4ec6-af63-97d7bd5d90c1\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"e7736c7e-618d-46e2-9c1b-d663b8e6fb7a\":{\"linkedColumns\":[\"Total Discount\"],\"axisType\":\"Y\",\"isOpposite\":true},\"eb96b084-1b5b-4c7d-b966-f674b881e210\":{\"linkedColumns\":[\"Quarter(Commit Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"air\":\"#56D3A8\",\"fob\":\"#06BF7F\",\"mail\":\"#FCD977\",\"rail\":\"#FCC838\",\"reg air\":\"#82DFE9\",\"ship\":\"#48D1E0\",\"truck\":\"#71A1F4\",\"total discount\":\"#2E75F0\"},\"yAxisShared\":false,\"visibleSeriesNames\":[\"\",\"air\",\"fob\",\"mail\",\"rail\",\"reg air\",\"ship\",\"truck\",\"Total Discount\"],\"version\":\"V2.1\",\"columnProperties\":{\"Quarter(Commit Date)\":{},\"Ship Mode\":{},\"Total Revenue\":{},\"Total Discount\":{}}}"
-      display_mode: CHART_MODE
-    viz_guid: 78f08684-d24a-4547-b334-4638c0c46f7e
-  - id: Viz_3
-    answer:
       name: "Q3, 1993 Revenue Trend by Ship Mode"
       description: |-
         Filters:
@@ -161,7 +108,7 @@ liveboard:
         client_state: "{\"dataLabels\":true,\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"baffa4de-f4bb-4bf0-96b8-8054b1371027\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"b101472f-538e-419e-ad5d-6f250294e387\":{\"linkedColumns\":[\"Total Discount\"],\"axisType\":\"Y\",\"isOpposite\":true},\"829429c7-da1f-4425-928c-c0f0f6671b0a\":{\"linkedColumns\":[\"Day(Commit Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"air\":\"#56D3A8\",\"fob\":\"#06BF7F\",\"mail\":\"#FCD977\",\"rail\":\"#FCC838\",\"reg air\":\"#82DFE9\",\"ship\":\"#48D1E0\",\"truck\":\"#71A1F4\",\"total discount\":\"#2E75F0\"},\"yAxisShared\":false,\"version\":\"V2.1\",\"columnProperties\":{\"Ship Mode\":{},\"Day(Commit Date)\":{},\"Total Revenue\":{},\"Total Discount\":{}}}"
       display_mode: CHART_MODE
     viz_guid: a204ddd3-f611-441a-9748-6bf7e56dd506
-  - id: Viz_4
+  - id: Viz_3
     answer:
       name: Top 20 Color for Revenue by Ship Mode
       tables:
@@ -218,7 +165,7 @@ liveboard:
         client_state: "{\"dataLabels\":true,\"yAxis\":{},\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"601348f2-f531-437a-abcc-bbc8d5d4e15e\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"fc173a2a-f4b5-49ce-8834-45c71c848583\":{\"linkedColumns\":[\"Color\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"fob\":\"#06BF7F\",\"mail\":\"#FCC838\",\"rail\":\"#82DFE9\",\"reg air\":\"#48D1E0\",\"ship\":\"#71A1F4\",\"truck\":\"#2E75F0\"},\"version\":\"V2.1\",\"columnProperties\":{\"Color\":{},\"Ship Mode\":{},\"Total Revenue\":{}}}"
       display_mode: CHART_MODE
     viz_guid: dd006929-9baa-4705-bb55-e037e28e8544
-  - id: Viz_5
+  - id: Viz_4
     answer:
       name: 1995 Revenue Trend by Ship Mode
       description: |-
@@ -270,7 +217,7 @@ liveboard:
         client_state: "{\"dataLabels\":true,\"yAxis\":{},\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"4aade43c-645f-49d7-be6e-acc50c97cf81\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"c9033797-114a-4b33-b2d7-e7b3fcc1d74a\":{\"linkedColumns\":[\"Total Discount\"],\"axisType\":\"Y\",\"isOpposite\":true},\"9746604e-9bbc-477b-bb18-80fedc7db3b9\":{\"linkedColumns\":[\"Day(Commit Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"air\":\"#56D3A8\",\"fob\":\"#06BF7F\",\"mail\":\"#FCD977\",\"rail\":\"#FCC838\",\"reg air\":\"#82DFE9\",\"ship\":\"#48D1E0\",\"truck\":\"#71A1F4\",\"total discount\":\"#2E75F0\"},\"yAxisShared\":false,\"version\":\"V2.1\",\"columnProperties\":{\"Ship Mode\":{},\"Day(Commit Date)\":{},\"Total Revenue\":{},\"Total Discount\":{}}}"
       display_mode: CHART_MODE
     viz_guid: 93bc9a18-e606-4a40-8ec6-52cefaee57c5
-  - id: Viz_6
+  - id: Viz_5
     answer:
       name: Top 20 Color for Revenue by Manufacturer
       tables:
@@ -327,7 +274,7 @@ liveboard:
         client_state: "{\"dataLabels\":true,\"yAxis\":{},\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"665b2f30-28db-4665-b592-0346827dd979\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"602856af-6f8c-471d-852c-5b34846f43e0\":{\"linkedColumns\":[\"Color\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"mfgr#1\":\"#06BF7F\",\"mfgr#3\":\"#FCC838\",\"mfgr#4\":\"#48D1E0\",\"mfgr#5\":\"#2E75F0\"},\"yAxisShared\":false,\"version\":\"V2.1\",\"columnProperties\":{\"Color\":{},\"Manufacturer\":{},\"Total Revenue\":{}}}"
       display_mode: CHART_MODE
     viz_guid: 12d4a241-1eb0-4f36-ab98-25f4341603c4
-  - id: Viz_7
+  - id: Viz_6
     answer:
       name: "Revenue Trends By Ship Mode, Semi-annual, Monthly"
       description: |-
@@ -379,7 +326,7 @@ liveboard:
         client_state: "{\"dataLabels\":true,\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"a080869e-7376-45a1-b19c-94654b2a6364\":{\"linkedColumns\":[\"Total Discount\"],\"axisType\":\"Y\",\"isOpposite\":false},\"febf6e55-529a-47b6-827e-0d38697bfc83\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":true},\"d8ebdf4d-158b-4cce-ae30-a77a45e9d066\":{\"linkedColumns\":[\"Month(Commit Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"air\":\"#56D3A8\",\"fob\":\"#06BF7F\",\"mail\":\"#FCD977\",\"rail\":\"#FCC838\",\"reg air\":\"#82DFE9\",\"ship\":\"#48D1E0\",\"truck\":\"#71A1F4\",\"total revenue\":\"#2E75F0\"},\"yAxisShared\":false,\"version\":\"V2.1\",\"columnProperties\":{\"Ship Mode\":{},\"Month(Commit Date)\":{},\"Total Discount\":{},\"Total Revenue\":{}}}"
       display_mode: CHART_MODE
     viz_guid: a397a489-55bd-4d91-8fcc-0eb11dc2858f
-  - id: Viz_8
+  - id: Viz_7
     answer:
       name: Revenue by Monthly (Commit Date)
       description: |-
@@ -436,6 +383,4 @@ liveboard:
     - visualization_id: Viz_6
       size: SMALL
     - visualization_id: Viz_7
-      size: SMALL
-    - visualization_id: Viz_8
       size: SMALL
